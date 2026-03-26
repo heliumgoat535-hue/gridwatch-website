@@ -45,6 +45,78 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is GridWatch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GridWatch is a free Android app for community-powered safety awareness. It combines real-time crime data, a police scanner with 7,359 feeds across all 50 states, 336,000+ traffic cameras, community incident reporting, BLE tracker detection, and location-based chat into a single app."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the police scanner work in GridWatch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GridWatch includes a bundled database of 7,359 police, fire, and EMS scanner feeds covering all 50 US states. You can search by state, county, or city, save favorites, and listen to live audio streams directly in the app. No separate account or subscription is required."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does GridWatch track my location?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. GridWatch uses your location only for map positioning and showing nearby reports, cameras, and scanner feeds. Your location history is never stored on our servers. BLE tracker scans, Wi-Fi scans, and scanner listening activity all stay on your device."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What types of community reports can I submit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GridWatch supports 10 report types including suspicious activity, theft, vandalism, noise complaint, traffic hazard, fire, medical emergency, lost pet, road closure, and general alert. Each report can include a photo and is automatically pinned to your location."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can GridWatch detect AirTag trackers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. GridWatch scans for nearby Bluetooth Low Energy (BLE) trackers including Apple AirTags, Tile trackers, Samsung SmartTags, and Chipolo devices. The scan runs entirely on your device and never sends data to external servers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is GridWatch free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. GridWatch is completely free to download and use with no subscriptions. The app is supported by occasional interstitial ads. All core features including the police scanner, crime data, cameras, community reporting, BLE detection, and geo chat are available at no cost."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need an account to use GridWatch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. GridWatch uses anonymous authentication by default. You do not need to provide an email address, phone number, or any personal information to use the app. You can set an optional nickname for community reporting and chat."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many traffic cameras does GridWatch have?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GridWatch includes a database of over 336,000 traffic and surveillance cameras sourced from the OpenTrafficCamMap project. You can browse cameras on the map, filter by location, and access live feeds where available."
+      }
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -854,6 +926,82 @@ section { position: relative; z-index: 1; }
   font-weight: 300;
 }
 
+/* ======== FAQ ======== */
+.faq { padding: 8rem 0; }
+.faq-grid {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.faq-item {
+  background: rgba(8, 8, 15, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+.faq-item.open { border-color: var(--cyan-dim); }
+.faq-question {
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.faq-question:hover { color: var(--cyan); }
+.faq-icon {
+  width: 20px; height: 20px;
+  flex-shrink: 0;
+  position: relative;
+}
+.faq-icon::before, .faq-icon::after {
+  content: '';
+  position: absolute;
+  background: var(--text-muted);
+  transition: all 0.3s;
+}
+.faq-icon::before {
+  width: 14px; height: 2px;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+.faq-icon::after {
+  width: 2px; height: 14px;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+.faq-item.open .faq-icon::after { transform: translate(-50%, -50%) rotate(90deg); opacity: 0; }
+.faq-item.open .faq-icon::before { background: var(--cyan); }
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s;
+  padding: 0 1.5rem;
+}
+.faq-item.open .faq-answer {
+  max-height: 300px;
+  padding: 0 1.5rem 1.25rem;
+}
+.faq-answer p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
 /* ======== CTA SECTION ======== */
 .cta-section {
   padding: 8rem 0;
@@ -1037,6 +1185,7 @@ footer {
     <li><a href="#features">Features</a></li>
     <li><a href="#stats">Coverage</a></li>
     <li><a href="#how-it-works">How It Works</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#download" class="nav-cta">Get the App</a></li>
   </ul>
 </nav>
@@ -1260,6 +1409,90 @@ footer {
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label reveal">Common Questions</span>
+      <h2 class="section-title reveal reveal-delay-1">Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          <span>What is GridWatch?</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          <p>GridWatch is a free Android app for community-powered safety awareness. It combines real-time crime data, a police scanner with 7,359 feeds across all 50 states, 336,000+ traffic cameras, community incident reporting, BLE tracker detection, and location-based chat into a single app.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-1">
+        <button class="faq-question" aria-expanded="false">
+          <span>How does the police scanner work?</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          <p>GridWatch includes a bundled database of 7,359 police, fire, and EMS scanner feeds covering all 50 US states. You can search by state, county, or city, save favorites, and listen to live audio streams directly in the app. No separate account or subscription is required.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-2">
+        <button class="faq-question" aria-expanded="false">
+          <span>Does GridWatch track my location?</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          <p>No. GridWatch uses your location only for map positioning and showing nearby reports, cameras, and scanner feeds. Your location history is never stored on our servers. BLE tracker scans, Wi-Fi scans, and scanner listening activity all stay on your device.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-3">
+        <button class="faq-question" aria-expanded="false">
+          <span>What types of community reports can I submit?</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          <p>GridWatch supports 10 report types including suspicious activity, theft, vandalism, noise complaint, traffic hazard, fire, medical emergency, lost pet, road closure, and general alert. Each report can include a photo and is automatically pinned to your location.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-4">
+        <button class="faq-question" aria-expanded="false">
+          <span>Can GridWatch detect AirTag trackers?</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. GridWatch scans for nearby Bluetooth Low Energy (BLE) trackers including Apple AirTags, Tile trackers, Samsung SmartTags, and Chipolo devices. The scan runs entirely on your device and never sends data to external servers.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-5">
+        <button class="faq-question" aria-expanded="false">
+          <span>Is GridWatch free?</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. GridWatch is completely free to download and use with no subscriptions. The app is supported by occasional interstitial ads. All core features including the police scanner, crime data, cameras, community reporting, BLE detection, and geo chat are available at no cost.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-5">
+        <button class="faq-question" aria-expanded="false">
+          <span>Do I need an account to use GridWatch?</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          <p>No. GridWatch uses anonymous authentication by default. You do not need to provide an email address, phone number, or any personal information to use the app. You can set an optional nickname for community reporting and chat.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-6">
+        <button class="faq-question" aria-expanded="false">
+          <span>How many traffic cameras does GridWatch have?</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          <p>GridWatch includes a database of over 336,000 traffic and surveillance cameras sourced from the OpenTrafficCamMap project. You can browse cameras on the map, filter by location, and access live feeds where available.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Download CTA -->
 <section class="cta-section" id="download">
   <div class="container">
@@ -1467,6 +1700,24 @@ document.querySelectorAll('.feature-card').forEach(card => {
   });
   card.addEventListener('mouseleave', () => {
     card.style.transform = '';
+  });
+});
+
+// ======== FAQ ACCORDION ========
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    // Close all others
+    document.querySelectorAll('.faq-item.open').forEach(el => {
+      el.classList.remove('open');
+      el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+    });
+    // Toggle clicked
+    if (!isOpen) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
   });
 });
 </script>
