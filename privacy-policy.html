@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy - GridWatch</title>
+<meta name="description" content="GridWatch privacy policy. How we handle your data, location information, and community reports.">
+<link rel="canonical" href="https://gridwatchapp.com/privacy-policy.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23030308'/><text y='.9em' x='.15em' font-size='80'>🔲</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: #030308;
+  color: #c8c8d8;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: #00e5ff; }
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 4rem 2rem 6rem;
+}
+.back {
+  display: inline-block;
+  color: #5a5a72;
+  text-decoration: none;
+  font-size: 0.85rem;
+  margin-bottom: 2rem;
+  transition: color 0.3s;
+}
+.back:hover { color: #f0f0f5; }
+h1 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 2.2rem;
+  color: #f0f0f5;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.5px;
+}
+.date {
+  color: #5a5a72;
+  font-size: 0.85rem;
+  margin-bottom: 3rem;
+}
+h2 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #f0f0f5;
+  margin: 2.5rem 0 0.75rem;
+}
+p, ul { margin-bottom: 1rem; }
+ul { padding-left: 1.5rem; }
+li { margin-bottom: 0.3rem; }
+</style>
+</head>
+<body>
+<div class="container">
+  <a href="/" class="back">&larr; Back to GridWatch</a>
+  <h1>Privacy Policy</h1>
+  <p class="date">Last updated: March 26, 2026</p>
+
+  <p>GridWatch ("the App") is developed by CyberLab Automation. This policy explains how the App handles your data.</p>
+
+  <h2>Data We Collect</h2>
+  <p>GridWatch collects minimal data to provide its core functionality:</p>
+  <ul>
+    <li><strong>Location data</strong> -- used only for map positioning and proximity to community reports. We do not track or store your location history on our servers.</li>
+    <li><strong>Community reports</strong> -- when you submit a report, the report type, location, optional photo, and nickname are stored in Firebase Firestore. Reports auto-expire after 2-48 hours depending on type.</li>
+    <li><strong>Chat messages</strong> -- geo chat messages, likes, and replies are stored in Firebase Firestore and visible to other users within the selected range.</li>
+    <li><strong>Anonymous authentication</strong> -- the App uses Firebase Anonymous Auth. No email, phone number, or personal identifiers are collected.</li>
+  </ul>
+
+  <h2>Data We Do Not Collect</h2>
+  <ul>
+    <li>Names, email addresses, or phone numbers</li>
+    <li>Location history or movement tracking</li>
+    <li>Contacts, call logs, or SMS</li>
+    <li>Browsing history</li>
+    <li>Unique device identifiers (beyond anonymous Firebase UID)</li>
+  </ul>
+
+  <h2>Local-Only Features</h2>
+  <p>The following features process data entirely on your device and never transmit it to our servers:</p>
+  <ul>
+    <li><strong>BLE tracker detection</strong> -- Bluetooth scans for AirTags, Tile, SmartTag, and Chipolo devices remain on-device.</li>
+    <li><strong>Wi-Fi scanner</strong> -- nearby network information stays local.</li>
+    <li><strong>Police scanner</strong> -- audio streams are fetched directly from public Broadcastify feeds; we do not proxy or log your listening activity.</li>
+    <li><strong>SOS flashlight</strong> -- fully on-device.</li>
+  </ul>
+
+  <h2>Third-Party Services</h2>
+  <p>The App uses the following third-party services:</p>
+  <ul>
+    <li><strong>Google Firebase</strong> (Authentication, Firestore, Storage) -- <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy Policy</a></li>
+    <li><strong>Google AdMob</strong> (advertising) -- <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+    <li><strong>OpenTrafficCamMap</strong> (traffic camera database) -- open data, no user data transmitted</li>
+  </ul>
+
+  <h2>Data Retention</h2>
+  <ul>
+    <li>Community reports: auto-expire after 2-48 hours</li>
+    <li>Chat messages: retained until manually deleted or system cleanup</li>
+    <li>Photos uploaded with reports: stored in Firebase Storage, deleted when the report expires</li>
+    <li>Anonymous auth tokens: managed by Firebase, no personal data attached</li>
+  </ul>
+
+  <h2>Children's Privacy</h2>
+  <p>GridWatch is not directed at children under 13. We do not knowingly collect data from children.</p>
+
+  <h2>Changes to This Policy</h2>
+  <p>We may update this policy from time to time. Changes will be reflected on this page with an updated date.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy? Contact us at <a href="mailto:cyberlabautomation@gmail.com">cyberlabautomation@gmail.com</a>.</p>
+</div>
+</body>
+</html>
